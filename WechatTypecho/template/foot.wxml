@@ -1,0 +1,3 @@
+<template name="foot">
+    <view class="footerview"><text >Copyright © 2020 By: www.wxy97.com</text></view>
+</template>

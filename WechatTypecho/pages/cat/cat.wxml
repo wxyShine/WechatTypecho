@@ -1,0 +1,51 @@
+<!--头部搜索-->
+<import src="../../template/foot.wxml" />
+<view class="bg-gradual-pink">
+  <cu-custom ><view slot="content">热门排行</view></cu-custom>
+  <view class="cu-bar  search">
+    <view class="search-form radius">
+      <text class="cuIcon-search"></text>
+      <input type="text"  bindinput="searchinput" bindconfirm="searchBtn" placeholder="搜索文章或者关键字" confirm-type="search"></input>
+    </view>
+  </view>
+</view>
+<!--导航栏-->
+<view class="scroll_box" style="margin-left:0rpx;">
+    <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;">
+        <view class="item_rank_list {{item.active? 'active':''}}" wx:for="{{ranklist}}" wx:key="item" bindtap="changeCat" data-idx="{{item.idx}}">
+        {{item.name}}
+        </view>
+    </scroll-view>
+</view>
+<swiper style="margin-left:0rpx; height:{{postheight}}" bindchange="change_finish" duration= "200" current="{{active_idx}}" circular="True" indicator-color = 'rgba(0, 0, 0, 0)' indicator-active-color = 'rgba(0, 0, 0, 0)' indicator-dots="false" lower-threshold="50">
+<block wx:for="{{allrankpostlist}}" wx:key="id" wx:for-item="item_cat">
+<swiper-item  style="background-color: transparent;">
+<view class="classify">
+    <scroll-view class="classify_detail" scroll-y scroll-with-animation="true">
+        <view class="children">
+        <block wx:key="id" wx:for="{{item_cat}}">
+        <navigator class="nav_postlist_item solid-bottom"  hover-class="navigator-hover" url="../detail/detail?item={{item.cid}}">
+            <view class="view_postlist_item"  style="height: 170rpx">
+                <view class="view_catpost" >
+                    <image class="image_cat_box" style="display:{{item.rank<=3 ? 'block' : 'none'}}"  mode="center" src="{{item.rank==1 ? '../../images/first.png' : (item.rank==2 ? '../../images/second.png' : (item.rank==3 ? '../../images/third.png' : '../../images/third.png')) }}"/>
+                    <view class="rank_cat_box" style="display:{{item.rank>3 ? 'block' : 'none'}}">{{item.rank}}</view>
+                    <image class="image_cat_thumb" style="margin-left: 24rpx;"  mode="aspectFit" src="{{ item.thumb}}"/>
+                    <text class="image_cat_item_title" style="margin-left: 250rpx;" >{{ item.title}}</text>
+                    <view style="margin-left: 250rpx; margin-top: 10rpx;" >
+                        <text class="list_text_view cuIcon-time margin-lr-xs " >{{item.posttime}}</text>
+                        <text class="list_text_view cuIcon-messagefill margin-lr-xs">{{item.commentsNum}}</text>
+                        <text class="list_text_view cuIcon-attentionfill margin-lr-xs">{{item.views}}</text>
+                        <text class="list_text_view cuIcon-appreciatefill margin-lr-xs">{{item.likes}}</text>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+        </block>
+        </view>
+    </scroll-view>
+</view>
+</swiper-item>
+</block>
+</swiper>
+<template is="foot"></template>
+

@@ -1,0 +1,12 @@
+<import src="../../../template/foot.wxml" />
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于我们</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于本博客</view>
+  <view class='text-content'>
+    <view class='margin-top-sm'>HI!欢迎使用王旭阳个人博客小程序</view>
+    <view class='margin-top-sm'>本程序基于HiTypecho进行二次开发，HiTypecho能帮您快速搭建微信小程序，将Typecho博客的内容映射到微信小程序，与您的网站信息时时同步</view>
+    <view class='margin-top-sm' style="color:#0081ff;">联系邮箱：wxyrrcj@gmail.com</view>
+    <view class='margin-top-sm' style="color:#0081ff;">官方网址：www.wxy97.com</view>
+  </view>
+  </view>
+<template is="foot"></template>

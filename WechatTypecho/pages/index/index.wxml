@@ -1,0 +1,99 @@
+<import src="../../template/foot.wxml"></import>
+<cu-custom bgColor="bg-gradual-pink"><view slot="content">王旭阳个人博客</view></cu-custom>
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <image src="https://wxy97.com/usr/xcx/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+    <view class="meiDate">
+    <view> <text space="ensp"></text> {{totimelist.content}}</view>
+    <view>{{totimelist.note}}</view>
+    <view style="float:right;margin-right: 10px;">每日一句：{{totimelist.dateline}}</view>
+    </view>
+  </view>
+    <!--显示数据-->
+    <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange">{{oneTime}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-time"></text>系统稳定运行</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xxl text-green">{{articleCount}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-edit"></text>系统文章总数</view>
+    </view>
+  </view>
+  <!--公告区域-->
+  <view class="cu-bar bg-white solid-bottom Gonggao">
+    <view class="action">
+      <text class="cuIcon-notificationfill"></text>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="4000">
+      <block wx:for="{{msgList}}" wx:key="this"> 
+      <view open-type="navigate" >
+        <swiper-item>
+          <view class="swiper_item" bindtap="showModal" data-target="Modal" id="{{item.gid}}" >公告：{{item.title}}(点击查看)</view>
+        </swiper-item>
+      </view> 
+    </block>
+    </swiper>
+    </view>
+  </view>
+  <!--查看公告内容-->
+  <view class="cu-modal {{modalName=='Modal'?'show':''}} ">
+  <view class="cu-dialog"wx:for="{{msgList}}" wx:key="this" wx:if="{{msgList[index].gid==noticegid}}">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{item.title}}</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+     {{item.content}}<text>\n\n</text>
+      时间: {{item.addtime}} 
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">确定</view>
+    </view>
+  </view>
+</view>
+<view style="width: 100%; height:100%;">
+<view class="scroll_box">
+    <scroll-view class="scroll-view_x" scroll-with-animation="True" scroll-into-view="{{current_position}}" scroll-x style="width: auto;overflow:hidden;">
+    <block wx:for="{{allcatslist}}" wx:key="item">
+        <view id="{{item.id_tag}}" class="item_list {{item.active? 'active':''}}" bindtap="changeCat" data-mid="{{item.mid}}">
+        {{item.name}}
+        </view>
+    </block>
+    </scroll-view>
+</view>
+<swiper style=" height:{{postheight}}" bindchange="change_finish" duration= "200" current="{{current_cat}}" circular="True" indicator-color = 'rgba(0, 0, 0, 0)' indicator-active-color = 'rgba(0, 0, 0, 0)' indicator-dots="false" lower-threshold="50">
+<block wx:for="{{allcatpostlist}}" wx:key="id" wx:for-item="item_cat">
+<swiper-item  style="background-color: transparent;">
+<view class="classify">
+    <scroll-view class="classify_detail" scroll-y scroll-with-animation="true">
+        <view class="children">
+        <block wx:key="id" wx:for="{{item_cat}}">
+        <navigator class="nav_postlist_item solid-bottom"  hover-class="navigator-hover" url="../detail/detail?item={{item.cid}}">
+            <view class="view_postlist_item"  style="height: 170rpx">
+                <view class="view_catpost" >
+                    <image class="image_cat_thumb"  mode="aspectFit" src="{{item.thumb[4].str_value}}"/>
+                    <text class="image_cat_item_title" >{{item.title}}</text>
+                    <view style="margin-top: 10rpx;" >
+                        <text class="list_text_view cuIcon-time margin-lr-xs " >{{item.posttime}}</text>        
+                        <text class="list_text_view cuIcon-messagefill margin-lr-xs">{{item.commentsNum}}</text>             
+                        <text class="list_text_view cuIcon-attentionfill margin-lr-xs">{{item.views}}</text>
+                        <text class="list_text_view cuIcon-appreciatefill margin-lr-xs">{{item.likes}}</text>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+        </block>
+        </view>
+    </scroll-view>
+</view>
+</swiper-item>
+</block>
+</swiper>
+<template is="foot"></template>
+</view>
+</scroll-view>
+

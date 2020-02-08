@@ -1,0 +1,70 @@
+<scroll-view scroll-y class="scrollPage">
+<cu-custom bgColor="bg-gradual-pink"><view slot="content">关于我的</view></cu-custom>
+  <view class="UCenter-bg">
+    <open-data type="userAvatarUrl" class="userinfo-avatar" mode="cover"></open-data>
+    <open-data type="userNickName"></open-data>
+    <view class="margin-top-sm">
+      <text>By:WXY</text>
+    </view>
+    <image src="https://wxy97.com/usr/xcx/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+
+    <!--显示数据-->
+    <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange"> 人生</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text>我们相遇了</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xxl text-green">若如初见</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-likefill"></text>未来还继续</view>
+    </view>
+  </view>
+<!--底部-->
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+     <button class="content" open-type='share' style="text-align:left;">
+        <text class="cuIcon-forwardfill text-green"></text>
+        <text class="text-grey">分享好友</text>
+      </button>
+    </view>
+
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showSupport">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">赞赏支持</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/update/update" hover-class="none">
+        <text class="cuIcon-edit text-blue"></text>
+        <text class="text-grey">更新日志</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">意见反馈</text>
+      </button>
+    </view>
+
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-service text-mauve"></text>
+        <text class="text-grey">联系客服</text>
+      </button>
+    </view>
+        <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/about/about" hover-class="none">
+        <text class="cuIcon-infofill text-DarkRed"></text>
+        <text class="text-grey">关于我们</text>
+      </navigator>
+    </view>
+
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

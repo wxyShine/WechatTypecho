@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cat/cat",
+    "pages/auth/auth",
+    "pages/detail/detail",
+    "pages/list/list",
+    "pages/share/share",
+    "pages/about/about",
+    "pages/about/index/index",
+    "pages/about/update/update",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "王旭阳个人博客",
+    "navigationBarTextStyle": "black",
+      "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#AAAAAA",
+    "backgroundColor": "#FAFBFF",
+    "selectedColor": "#d4237a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "images/tabar/home_cur.png",
+        "iconPath": "images/tabar/home.png"
+      },
+      {
+        "pagePath": "pages/cat/cat",
+        "text": "排行",
+        "selectedIconPath": "images/tabar/basics_cur.png",
+        "iconPath": "images/tabar/basics.png"
+      },
+      {
+        "pagePath": "pages/about/index/index",
+        "text": "我的",
+        "selectedIconPath": "images/tabar/about_cur.png",
+        "iconPath": "images/tabar/about.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
