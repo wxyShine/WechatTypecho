@@ -17,19 +17,19 @@
 
 > 首页 
 
-![]()
+![](/images/index.jpg)
 
 > 热门排行
 
-![]()
+![](/images/ranking.jpg)
 
 > 文章详情
 
-![]()
+![](/images/details.jpg)
 
 > 关于我的
 
-![]()
+![](/images/about.jpg)
 
 ## 安装须知
 
@@ -52,6 +52,7 @@
 然后进入Typecho后台插件管理(控制台->插件)，启用WeTypecho插件，然后点设置：
 API密钥自己设置，小程序APPID需要到微信小程序后台去查看
 
+![](/images/wetypecho.png)
 
 
 ## 小程序端配置
@@ -63,6 +64,9 @@ API密钥自己设置，小程序APPID需要到微信小程序后台去查看
 name修改为你的网站名称，用于小程序页脚显示。
 **API_SECRET必须与WeTypecho插件中的API密钥配置一样**
 保存关闭。然后打开根目录下的app.json
+
+
+![](/images/conf.png)
 
 修改这个值保存。
 然后打开Template目录下的foot.wxml
