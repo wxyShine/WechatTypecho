@@ -13,23 +13,23 @@
 
 扫码查看
 
-![](/images/xcx.jpg)
+<img style="width:50%;height:50%" src="./images/xcx.jpg"/>
 
 > 首页 
 
-![](/images/index.jpg)
+<img style="width:50%;height:50%" src="./images/index.jpg" align=center />
 
 > 热门排行
 
-![](/images/ranking.jpg)
+<img style="width:50%;height:50%" src="./images/ranking.jpg" align=center />
 
 > 文章详情
 
-![](/images/details.jpg)
+<img style="width:50%;height:50%" src="./images/details.jpg" align=center />
 
-> 关于我的
+> 关于我的 
 
-![](/images/about.jpg)
+<img style="width:50%;height:50%" src="./images/about.jpg" align=center />
 
 ## 安装须知
 
@@ -52,7 +52,7 @@
 然后进入Typecho后台插件管理(控制台->插件)，启用WeTypecho插件，然后点设置：
 API密钥自己设置，小程序APPID需要到微信小程序后台去查看
 
-![](/images/wetypecho.png)
+![](./images/wetypecho.png)
 
 
 ## 小程序端配置
@@ -66,7 +66,7 @@ name修改为你的网站名称，用于小程序页脚显示。
 保存关闭。然后打开根目录下的app.json
 
 
-![](/images/conf.png)
+![](./images/conf.png)
 
 修改这个值保存。
 然后打开Template目录下的foot.wxml
